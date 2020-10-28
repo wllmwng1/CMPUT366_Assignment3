@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+#load results here
+lines = np.zeros(101)
+data = open("pheads0.25.dat")
+data2 = open("pheads0.6.dat")
+lines = data.readlines()
+lines1 = data2.readlines()
+print(lines)
+x = np.arange(1, 101 + 1)
+plt.plot(x, lines,label = "0.25")
+plt.plot(x, lines1,label = "0.6")
+plt.xlabel('Capital')
+plt.ylabel('Value estimates')
+plt.legend()
+plt.show()
+data = open("policy0.25.dat")
+data2 = open("policy0.6.dat")
+lines = data.readlines()
+lines1 = data2.readlines()
+x = np.arange(1, 101 + 1)
+plt.plot(x, lines, label = "0.25")
+plt.plot(x, lines1, label = "0.6")
+plt.xlabel('Capital')
+plt.ylabel('Optimal Policy')
+plt.legend()
+plt.show()
